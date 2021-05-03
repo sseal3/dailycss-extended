@@ -1,0 +1,204 @@
+body {
+  background: black;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.lightning {
+  position: absolute;
+  background: #3a3b3c;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  background: radial-gradient(circle, rgba(83,85,86,1) 0%, rgba(58,59,60,1) 70%, rgba(0,0,0,1) 100%);
+  z-index: -1;
+}
+.curtain-rod {
+  position: absolute;
+  top: 21%;
+  left: 32%;
+  width: 36%;
+  height: 2%;
+  background: grey;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(27,0,0,1) 50%, rgba(0,0,0,1) 100%);
+  align-items: center;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  box-shadow: black 0px 20px 30px -10px;
+}
+.curtain-rod::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -4%;
+  width: 5%;
+  height: 175%;
+  background: grey;
+  background: radial-gradient(circle, rgba(27,0,0,1) 0%, rgba(16,0,0,1) 50%, rgba(0,0,0,1) 100%);
+  box-shadow: black 0px 20px 30px -10px;
+  border-radius: 100%;
+}
+.curtain-rod::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -4%;
+  width: 5%;
+  height: 175%;
+  background: grey;
+  background: radial-gradient(circle, rgba(27,0,0,1) 0%, rgba(16,0,0,1) 50%, rgba(0,0,0,1) 100%);
+  box-shadow: black 0px 20px 30px -10px;
+  border-radius: 100%;
+}
+
+.curtain {
+  position: absolute;
+  left: 33%;
+  top: 21%;
+  width: 8%;
+  height: 25%;
+  border-radius: 0 0 500px 0;
+  background: #060607;
+  align-items: center;
+  animation-name: curtain-flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.curtain.opp {
+  transform: rotateY(-180deg);
+  left: 58.5%;
+}
+.curtain::after {
+  content: '';
+  position: absolute;
+  left: 0%;
+  top: 80%;
+  width: 120%;
+  height: 160%;
+  clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+  background: #060607;
+  animation-name: curtain-flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.window {
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  width: 30%;
+  height: 50%;
+}
+.window-frame {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #1b0000;
+  border-radius: 5px;
+  flex-wrap: wrap;
+  display: inline-flex;
+  align-items: center;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+}
+.window-pane {
+  position: relative;
+  margin-left: 4.1%;
+  margin-right: 4.1%;
+  height: 28%;
+  width: 25%;
+  background: #e4e6eb;
+  border-radius: 2px;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  z-index: 4;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.window-pane::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #eff0f3;
+  clip-path: polygon(0 75%, 75% 0, 100% 0, 100% 25%, 25% 100%, 0 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.1;
+  }
+
+  60% {
+    opacity: 0.1;
+  }
+  62% {
+    opacity: 0.9;
+  }
+  64% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  77% {
+    opacity: 0.5;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+@keyframes curtain-flash {
+  0% {
+    background: #060607;
+  }
+
+  60% {
+    background: #060607;
+  }
+  62% {
+    background: #000026;
+  }
+  64% {
+    background: #060607;
+  }
+  65% {
+    background: #000026;
+  }
+  70% {
+    background: #060607;
+  }
+  75% {
+    background: #000026;
+  }
+  77% {
+    background: #060607;
+  }
+  80% {
+    background: #000026;
+  }
+  100% {
+    background: #000026;
+  }
+}
