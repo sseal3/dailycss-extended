@@ -1,0 +1,30 @@
+html {
+  height:100%;
+}
+
+body {
+  background: black;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.raindrop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from( black ), to( cyan )  );
+  position: absolute;
+  bottom: 20px;
+  width: 1px;
+  height: 80px;
+  animation-name: slidedown;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 1.66s;
+  z-index: 3;
+}
+@keyframes slidedown {
+  to {
+    margin-top: 1500px;
+  }
+}
