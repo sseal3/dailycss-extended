@@ -1,0 +1,146 @@
+body {
+  background: #0f1521;
+  height: 100%;
+  width: 100%;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 400px;
+  height: 400px;
+  perspective: 20px;
+}
+
+.prism {
+  position: absolute;
+  background: #caf1ff;
+  height: 160px;
+  width: 160px;
+  top: 30%;
+  left: 30%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  z-index: 3;
+  perspective: 60px;
+}
+
+.white-beam {
+  position: absolute;
+  background: white;
+  height: 4%;
+  width: 200%;
+  top: -40%;
+  left: -115%;
+  transform: rotate(30deg);
+  transform-origin: top left;
+  animation-name: whitein;
+  animation-iteration-count: 1;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  z-index: 3;
+}
+
+.inner-beam {
+  position: absolute;
+  height: 17px;
+  left: -64px;
+  width: 192px;
+  background: white;
+  top: 78px;
+  transform: rotate3d(0,-10,-1,30deg);
+  opacity: 0.5;
+  flex-wrap: wrap;
+  display: inline-flex;
+  align-items: center;
+}
+.inner-cover {
+  position: absolute; 
+  background: #caf1ff;
+  top: 0%;
+  right: 0%;
+  height: 100%;
+  width: 100%;
+  animation-name: innerin;
+  animation-iteration-count: 1;
+  animation-duration: 1.5s;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  z-index: 4;
+}
+.outer-beam {
+  position: absolute;
+  height: 31.75%;
+  width: 100%;
+  background: white;
+  top: 37%;
+  left: 50%;
+  transform: rotate3d(0,-10,-1,30deg);
+  overflow: hidden;
+  flex-wrap: wrap;
+  display: inline-flex;
+  align-items: center;
+}
+.outer-beam::after {
+  content: '';
+  position: absolute; 
+  background: #0f1521;
+  top: -10%;
+  right: 0%;
+  height: 120%;
+  width: 120%;
+  animation-name: innerin;
+  animation-iteration-count: 1;
+  animation-duration: 3.5s;
+  animation-delay: 2.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  z-index: 4;
+}
+.beam {
+  position: relative;
+  background: #ff3200;
+  height: 14.286%;
+  width: 100%;
+}
+.beam.orange {
+  background: #ffcc33;
+}
+.beam.yellow {
+  background: #ffff33;
+}
+.beam.green {
+  background: #66cc66;
+}
+.beam.blue {
+  background: #3398cc;
+}
+.beam.indigo {
+  background: #2c62cc;
+}
+.beam.violet {
+  background: #69359a;
+}
+
+
+@keyframes whitein {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 200%;
+  }
+}
+
+@keyframes innerin {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
