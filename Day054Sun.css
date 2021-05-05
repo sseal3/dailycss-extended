@@ -1,0 +1,82 @@
+body {
+  background: #00AAE4;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding; 0;
+  animation: shadeit 10s linear infinite;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 500px;
+  height: 500px;
+}
+
+.sun {
+  position: absolute;
+  background: #ffc000;
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  box-shadow: #ffc000 0px 0px 5px 2px, #ffc000 0px 0px 5px 4px;
+  top: 80%;
+  left: 50%;
+  animation: moveit 10s linear infinite;
+  z-index: 0;
+}
+
+.grass {
+  position: absolute;
+  background: green;
+  height: 15%;
+  bottom: 0%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  animation: darkenit 10s linear infinite;
+}
+.grass::before {
+  content: '';
+  background: green;
+  position: absolute;
+  height: 200%;
+  width: 70%;
+  top: -190%;
+  left: 30%;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  animation: darkenit 10s linear infinite;
+}
+.grass::after {
+  content: '';
+  background: green;
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  top: -190%;
+  left: 0%;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+@keyframes moveit {
+  0%, 25% { transform: rotate(0deg) translateX(350px) rotate(0deg) ;}
+  75%, 100%{ transform: rotate(-180deg) translateX(350px) rotate(180deg);  }
+}
+
+@keyframes shadeit {
+  0%, 30% { background: #005775; }
+  40% { background: #00AAE4; }
+  50% { background: #00AAE4; }
+  60% { background: #00AAE4; }
+  70%, 100% { background: #005775; }
+}
+@keyframes darkenit {
+  0%, 30% { background: #136d15; }
+  40% { background: #41980a; }
+  50% { background: #41980a; }
+  60% { background: #41980a; }
+  70%, 100% { background: #136d15; }
+}
