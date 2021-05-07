@@ -1,0 +1,90 @@
+html {
+  height:100%;
+}
+
+body {
+  background: #006694;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-70deg, rgba(0,71,103,1) 0%, rgba(0,102,148,1) 35%, rgba(76,147,180,1) 100%);
+  overflow: hidden;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 500px;
+  height: 500px;
+}
+
+.base {
+  position: absolute;
+  background: black;
+  height: 5%;
+  width: 100%;
+}
+
+.ball {
+  position: absolute;
+  background: black;
+  height: 18%;
+  width: 10%;
+  border-radius: 100%;
+  top:60%;
+  z-index: 3;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  left: 100px;
+  background: radial-gradient(circle at 33px 33px, silver, #000);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  transform-origin: 50px -298px;
+}
+.ball::after {
+  content: '';
+  background: black;
+  position: absolute;
+  height: 304px;
+  width: 4px;
+  top: -298px;
+  left: 48px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.ball:nth-child(2) {
+  left: 0px;
+  animation: swingit-left 0.9s alternate ease-in infinite;
+}
+.ball:nth-child(3) {
+  left: 200px;
+}
+.ball:nth-child(4) {
+  left: 300px;
+}
+.ball:nth-child(5) {
+  left: 400px;
+  animation: swingit-right 0.9s alternate ease-out infinite;
+}
+
+
+@keyframes swingit-left {
+  0% {
+    transform: rotate(35deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swingit-right {
+  50% {
+    transform: rotate(0deg);
+  }
+  
+  100% {
+    transform: rotate(-35deg);
+  }
+}
