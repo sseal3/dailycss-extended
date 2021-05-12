@@ -1,0 +1,272 @@
+body {
+  background: #586;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 400px;
+  height: 400px;
+  background: white;
+  border: 10px solid black;
+}
+.incline {
+  position: absolute;
+  width: 60%;
+  height: 5%;
+  background: red;
+  background: linear-gradient(0deg, #212121 0%, #34acbc 92%);
+  transform: rotate(-19deg);
+  border-radius: 5px 5px 20px 5px;
+  top: 21%;
+  left: 42%;
+  z-index: 2;
+}
+
+.ball {
+  position: absolute;
+  background: black;
+  height: 18%;
+  width: 10%;
+  border-radius: 100%;
+  top: 0%;
+  left: 90%;
+  z-index: 1;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background: radial-gradient(circle at 16px 16px, silver, #000);
+  animation: slideit 10s linear forwards;
+}
+
+.pulley{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 10%;
+  left: 15%;
+  background: #27751c;
+  border-radius: 100%;
+  background: radial-gradient(circle, #1c554a 60%, #212121 100%);
+}
+.cup {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 40%;
+  left: 26%;
+  opacity: 0.5;
+  background: #000035;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  animation: descendit 1s forwards ease-out;
+  animation-delay: 2.2s;
+  z-index: 4;
+}
+.counterweight {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: 70%;
+  left: 5%;
+  background: black;
+  animation: raiseit 1s linear forwards;
+  animation-delay: 2.3s;
+}
+.pulley-rope {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 7.5%;
+  left: 12.5%;
+  background: transparent;
+  border: 5px solid black;
+  border-radius: 100%;
+  z-index: 0;
+}
+.counter-rope {
+  position: absolute;
+  width: 4px;
+  height: 210px;
+  top: 50%;
+  left: -5%;
+  background: black;
+  z-index: 0;
+}
+
+.main-rope {
+  position: absolute;
+  width: 4px;
+  height: 86px;
+  top: 50%;
+  left: 101%;
+  background: black;
+  z-index: 0;
+  animation: growit 1s forwards ease-out;
+  animation-delay: 2.2s;
+}
+
+.fulchrum {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 70%;
+  left: 53%;
+  background: black;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.wedge {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 35%;
+  left: 80%;
+  background: #065454;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+.lever {
+  position: absolute;
+  width: 60%;
+  height: 3%;
+  background: red;
+  background: linear-gradient(0deg, #212121 0%, #34acbc 92%);
+  border-radius: 5px;
+  top: 67%;
+  left: 30%;
+  z-index: 2;
+  transform-origin: bottom;
+  animation: rotateit 1s linear forwards;
+  animation-delay: 2.2s;
+}
+
+.balloon {
+  position: absolute;
+  background: #39c83a;
+  height: 15%;
+  width: 12%;
+  border-radius: 100%;
+  top: 53%;
+  left: 78%;
+  animation: popit 1s forwards ease-out;
+  animation-delay: 2.2s;
+  transform: rotate(30deg);
+  z-index: 3;
+}
+.balloon-fragments {
+  position: absolute;
+  background: #39c83a;
+  height: 5%;
+  width: 12%;
+  border-radius: 100%;
+  top: 52%;
+  left: 78%;
+  animation: showit 0.4s forwards ease-out;
+  animation-delay: 2.75s;
+  transform: rotate(30deg);
+  z-index: -1;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 50% 100%, 2% 35%, 100% 76%);
+
+}
+.balloon::after {
+  content: '';
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  bottom: -5%;
+  left: 40%;
+  background: #39c83a;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+@keyframes slideit {
+  0% {
+    top: 0%;
+    left: 90%;
+  }
+
+  15% {
+    top: 21%;
+    left: 28.5%;
+  }
+  
+  25% {
+    top: 54%;
+    left: 28.5%;
+  }
+  
+  30%, 100% {
+    top: 65%;
+    left: 28.5%;
+  }
+}
+
+@keyframes popit {
+  0% {
+    top: 53%;
+  }
+  99.9% {
+    top: 45%;
+  }
+  100% {
+    z-index: -1;
+  }
+}
+
+@keyframes descendit {
+  0% {
+    top: 40%;
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    top: 60%;
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes rotateit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes raiseit {
+  0% {
+    top: 70%;
+  }
+  100% {
+    top: 60%;
+  }
+}
+
+@keyframes growit {
+  0% {
+    height: 86px;
+  }
+  100% {
+    height: 165px;
+  }
+}
+
+@keyframes showit {
+  0% {
+    z-index: -1;
+  top: 52%;
+  }
+  50% {
+    z-index: 1;
+    top: 52%;
+  }
+  100% {
+    z-index: 1;
+    top: 50%;
+  }
+}
