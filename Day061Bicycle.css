@@ -1,0 +1,296 @@
+body {
+  background: #c5f1f2;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.field {
+  position: absolute;
+  bottom: 25%;
+  width: 100%;
+  height: 30%;
+  background: #8fad7b;
+}
+.range {
+  position: absolute;
+  bottom: 53%;
+  width: 100%;
+  height: 15%;
+  background: #027556;
+  clip-path: polygon(47% 63%, 65% 16%, 79% 59%, 100% 0, 100% 100%, 0 100%, 0 18%, 11% 0, 21% 58%, 38% 12%);
+  z-index: 2;
+}
+.range:nth-child(2) {
+  background: #78c6ca;
+  bottom: 56%;
+  height: 25%;
+  clip-path: polygon(48% 56%, 63% 17%, 79% 56%, 100% 10%, 100% 100%, 0 100%, 0 18%, 6% 0, 19% 57%, 33% 10%);
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+.range:nth-child(3) {
+  background: #afdddd;
+  bottom: 65%;
+  height: 25%;
+  z-index: 0;
+}
+.grass {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 30%;
+  background: #659f64;
+}
+.road {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  height: 20%;
+  background: #547989;
+}
+.line {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  height: 3px;
+  background: white;
+}
+.line:nth-child(2) {
+  top: 5%;
+}
+.line:nth-child(3) {
+  top: 46%;
+  background: orange;
+}
+.line:nth-child(4) {
+  bottom: 46%;
+  background: orange;
+}
+
+.bike {
+  position: absolute;
+  margin: auto;
+  bottom: 20%;
+  display: block;
+  left: -150%;
+  width: 450px;
+  height: 300px;
+  animation: rideit 10s linear infinite;
+}
+
+.wheel {
+  position: absolute;
+  background: transparent;
+  height: 48%;
+  width: 32%;
+  border-radius: 100%;
+  bottom: 0%;
+  border: 8px solid black;
+  z-index: 3;
+}
+.wheel.front {
+  right: 0%;
+}
+.spoke {
+  position: absolute;
+  background: black;
+  height: 100%;
+  width: 2px;
+  top: 0%;
+  left: 49%;
+  animation: spin-spoke 3s linear infinite;
+}
+
+.spoke:nth-child(2) {
+  transform: rotate(20deg);
+  animation: spin-spoke20 3s linear infinite;
+}
+.spoke:nth-child(3) {
+  transform: rotate(40deg);
+  animation: spin-spoke40 3s linear infinite;
+}
+.spoke:nth-child(4) {
+  transform: rotate(60deg);
+  animation: spin-spoke60 3s linear infinite;
+}
+.spoke:nth-child(5) {
+  transform: rotate(80deg);
+  animation: spin-spoke80 3s linear infinite;
+}
+.spoke:nth-child(6) {
+  transform: rotate(100deg);
+  animation: spin-spoke100 3s linear infinite;
+}
+.spoke:nth-child(7) {
+  transform: rotate(120deg);
+  animation: spin-spoke120 3s linear infinite;
+}
+.spoke:nth-child(8) {
+  transform: rotate(140deg);
+  animation: spin-spoke140 3s linear infinite;
+}
+.spoke:nth-child(9) {
+  transform: rotate(160deg);
+  animation: spin-spoke160 3s linear infinite;
+}
+
+.tube {
+  position: absolute;
+  background: #301934;
+  height: 12px;
+  width: 140px;
+  top: 31%;
+  left: 29%;
+  border-radius: 10px;
+  z-index: 3;
+}
+.tube.head {
+  transform-origin: left;
+  top: 73.3%;
+  width: 200px;
+  left: 17%;
+  transform: rotate(-66deg);
+}
+.tube.back {
+  width: 165px;
+  top: 51.5%;
+  left: 52.75%;
+  transform: rotate(51deg);
+}
+.tube.seat {
+  transform-origin: left;
+  top: 73.3%;
+  width: 190px;
+  left: 50%;
+  transform: rotate(-70deg);
+}
+
+.tube.down {
+  width: 140px;
+  top: 53%;
+  left: 22%;
+  transform: rotate(48deg);
+}
+.tube.chain {
+  top: 71.5%;
+  left: 50%;
+  width: 143px;
+}
+.crankset {
+  position: absolute;
+  background: #301934;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  top: 66%;
+  left: 46%;
+}
+
+.pedal {
+  position: absolute;
+  background: black;
+  height: 10px;
+  width: 50px;
+  top: 35%;
+  left: 49%;
+  transform-origin: left;
+  transform: rotate(120deg);
+  animation: spin-spoke120 3s linear infinite;
+  border-radius: 10px;
+  z-index: 4;
+}
+.pedal::after {
+  content: '';
+  position: absolute;
+  background: #77787c;
+  height: 10px;
+  width: 30px;
+  top: 0%;
+  left: 70%;
+  transform: rotate(-120deg);
+  animation: spin-pedal 3s linear infinite;
+  border-radius: 10px;
+  z-index: 4;
+}
+.bike-seat {
+  position: absolute;
+  background: black;
+  height: 20px;
+  width: 60px;
+  border-radius: 10px;
+  clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%, 0 90%, 0 32%);
+  left: 58%;
+  top: 12%;
+  z-index: 4;
+}
+.handles {
+  position: absolute;
+  background: black;
+  height: 10px;
+  width: 50px;
+  border-radius: 10px;
+  left: 33%;
+  top: 13%;
+  z-index: 4;
+}
+
+@keyframes rideit {
+  from {
+    left: 120%;
+  }
+  to {
+    left: -120%;
+  }
+}
+@keyframes spin-spoke {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin-spoke20 {
+  to {
+    transform: rotate(-340deg);
+  }
+}
+@keyframes spin-spoke40 {
+  to {
+    transform: rotate(-320deg);
+  }
+}
+@keyframes spin-spoke60 {
+  to {
+    transform: rotate(-300deg);
+  }
+}
+@keyframes spin-spoke80 {
+  to {
+    transform: rotate(-280deg);
+  }
+}
+@keyframes spin-spoke100 {
+  to {
+    transform: rotate(-260deg);
+  }
+}
+@keyframes spin-spoke120 {
+  to {
+    transform: rotate(-240deg);
+  }
+}
+@keyframes spin-spoke140 {
+  to {
+    transform: rotate(-220deg);
+  }
+}
+@keyframes spin-spoke160 {
+  to {
+    transform: rotate(-200deg);
+  }
+}
+@keyframes spin-pedal {
+  to {
+    transform: rotate(240deg);
+  }
+}
