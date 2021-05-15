@@ -1,0 +1,123 @@
+body {
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background: #ccc;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #22646e;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #22646e;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+.wave::before,
+.wave::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+.wave::before {
+  border-radius: 45%;
+  background: rgba(255,255,255,1);
+  animation: animate 8s linear infinite;
+}
+.wave::after {
+  border-radius: 40%;
+  background: rgba(255,255,255,.5);
+  animation: animate 8s linear infinite;
+}
+.boat {
+  position: absolute;
+  height: 30%;
+  width: 30%;
+  left: 35%;
+  top: 24%;
+  z-index: 2;
+  animation: rockit 2s linear infinite;
+  animation-delay: -.5s;
+}
+.bottom {
+  position: absolute;
+  background: black;
+  height: 30%;
+  width: 100%;
+  bottom: 0%;
+  z-index: 2;
+  border-radius: 5px 5px 100px 100px;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+.sail {
+  position: absolute;
+  background: black;
+  height: 65%;
+  width: 50%;
+  top: 0%;
+  z-index: 2;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+.sub-sail {
+  position: absolute;
+  background: black;
+  height: 55%;
+  width: 35%;
+  top: 10%;
+  right: 10%;
+  z-index: 2;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+
+}
+@keyframes animate {
+  from {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+
+  to {
+  transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+@keyframes rockit {
+  0% {
+    transform: rotate(6deg);
+    margin-top: 0%;
+  }
+  
+  25% {
+    margin-top: -3%;
+  }
+  
+  50% {
+    transform: rotate(-6deg);
+    margin-top: 0%;
+  }
+  100% {
+    transform: rotate(6deg);
+    margin-top: 0%;
+  }
+}
