@@ -1,0 +1,413 @@
+body {
+  background: #bee9f0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 120px;
+  height: 40px;
+  background: white;
+  border-radius: 100px;
+  opacity: 0.6;
+}
+.cloud::before {
+  content: '';
+  position: absolute;
+  top: -70%;
+  left: 30%;
+  width: 50%;
+  height: 120%;
+  background: white;
+  border-radius: 50%;
+}
+.cloud::after {
+  content: '';
+  position: absolute;
+  top: -35%;
+  left: 15%;
+  width: 25%;
+  height: 60%;
+  background: white;
+  border-radius: 50%;
+}
+.cloud:nth-child(2) {
+  left: 50%;
+  top: 7%;
+  opacity: 0.8;
+  transform: scale(1.2);
+}
+.cloud:nth-child(3) {
+  left: 80%;
+  top: 15%;
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.sun {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 100%;
+  box-shadow: 1px 0px 40px 13px rgba(255,255,255,0.78)
+}
+.field {
+  position: absolute;
+  background: #72a664;
+  height: 300%;
+  width: 300%;
+  top: 40%;
+  left: -60%;
+  border-radius: 100%;
+  z-index: 2;
+}
+.field.bl {
+  background: #aad57b;
+  left: -150%;
+  z-index: 1;
+}
+.field.sub {
+  background: #7bb467;
+  left: -250%;
+  top: 55%;
+  width: 600%;
+  z-index: 3;
+}
+.field.mid {
+  background: #8acc75;
+  left: -150%;
+  top: 60%;
+  width: 400%;
+  z-index: 4;
+}
+.field.sub2 {
+  background: #abd67b;
+  left: -250%;
+  top: 70%;
+  width: 600%;
+  z-index: 5;
+}
+.field.sub3 {
+  background: #7bb467;
+  left: -140%;
+  top: 90%;
+  width: 400%;
+  z-index: 6;
+}
+.field.sub4 {
+  background: #8acc75;
+  left: -160%;
+  top: 94%;
+  width: 400%;
+  z-index: 7;
+}
+.road {
+  position: absolute;
+  background: #d5b987;
+  height: 12%;
+  top: 76%;
+  width: 100%;
+  z-index: 8;
+}
+.road::after {
+  content: '';
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  background: #76a863;
+  top: -14%;
+}
+.road::before {
+  content: '';
+  position: absolute;
+  height: 10%;
+  width: 80%;
+  background: #c6af7d;
+  top: 20%;
+  left: 10%;
+  border-radius: 10px;
+}
+
+.tractor {
+  position: absolute;
+  margin: auto;
+  top: 40%;
+  left: 40%;
+  display: block;
+  width: 400px;
+  height: 300px;
+  z-index: 8;
+  animation: slide-aside 15s linear infinite;
+  animation-delay: -7s;
+}
+
+.roof {
+  position: absolute;
+  height: 4%;
+  width: 35%;
+  background: #de2a1b;
+  top: 2%;
+  right: 10%;
+  border-radius: 20px;
+  z-index: 1:
+}
+.cab {
+  position: absolute;
+  height: 45%;
+  width: 35%;
+  background: #c92116;
+  top: 6%;
+  right: 10%;
+  z-index: 1;
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+}
+.window {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  background: #cbe0e7;
+  top: 10%;
+  right: 10%;
+  z-index: 0;
+  clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+}
+.window::after {
+  content: '';
+  position: absolute;
+  background: #dcebef;
+  height: 150%;
+  width: 20%;
+  top: -20%;
+  left: 20%;
+  transform: rotate(30deg);
+}
+
+.window::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 8%;
+  background: #c92116;
+  left: 40%;
+  z-index: 2;
+}
+
+.engine {
+  position: absolute;
+  height: 32%;
+  width: 75%;
+  background: #c92116;
+  top: 48%;
+  right: 10.1%;
+  border-radius: 8px 0 0 0;
+  z-index: 1;
+}
+
+.hood {
+  position: absolute;
+  height: 32%;
+  width: 75%;
+  background: #dd2d20;
+  top: 32%;
+  right: 10.2%;
+  border-radius: 40px;
+  transform: rotate(-10deg);
+  z-index: 0;
+}
+
+
+.door {
+  position: absolute;
+  height: 95%;
+  width: 41.5%;
+  background: #bb1f10;
+  bottom: 0%;
+  right: 0%;
+  z-index: 2;
+}
+
+
+.fender {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  background: transparent;
+  top: 50%;
+  left: 5%;
+  border-radius: 100%;
+  border: 15px solid #dd2d20;
+  z-index: 3;
+  clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 50%, 0 25%);
+}
+.fender.rear {
+  top: 45%;
+  transform: rotate(-36deg) scale(1.15);
+  left: 58%;
+  background: #bb1f10;
+}
+
+.wheel-front {
+  position: absolute;
+  height: 130px;
+  width: 130px;
+  top: 60%;
+  left: 11%;
+  border-radius: 100%;
+  z-index: 2;
+  animation: spin 6s linear infinite;
+}
+.wheel {
+  position: absolute;
+  height: 130px;
+  width: 130px;
+  background: #40484a;
+  border-radius: 100%;
+  z-index: 2;
+}
+.wheel::before {
+  content: '';
+  position: absolute;
+  height: 64%;
+  width: 64%;
+  background: #6e7881;
+  top: 18%;
+  left: 18%;
+  border-radius: 100%;
+}
+.wheel::after {
+  content: '';
+  position: absolute;
+  height: 20%;
+  width: 20%;
+  background: #40484a;
+  top: 40%;
+  left: 40%;
+  border-radius: 100%;
+}
+.tread {
+  position: absolute;
+  background: #343b31;
+  height: 108%;
+  width: 20%;
+  border-radius: 6px;
+  left: 40%;
+  top: -4%;
+}
+.tread:nth-child(2) {
+  transform: rotate(30deg);
+}
+.tread:nth-child(3) {
+  transform: rotate(60deg);
+}
+.tread:nth-child(4) {
+  transform: rotate(90deg);
+}
+.tread:nth-child(5) {
+  transform: rotate(120deg);
+}
+.tread:nth-child(6) {
+  transform: rotate(150deg);
+}
+.hole {
+  position: absolute;
+  height: 10%;
+  width: 10%;
+  background: #343b31;
+  top: 45%;
+  left: 45%;
+  border-radius: 100%;
+  z-index: 20;
+}
+
+.bolt {
+  position: absolute;
+  background: transparent;
+  height: 50%;
+  width: 10%;
+  border-radius: 6px;
+  left: 45%;
+  top: 25%;
+  z-index: 3;
+}
+.bolt::after {
+  content: '';
+  position: absolute;
+  height: 7px;
+  width: 7px;
+  left: 3px;
+  background: #40484a;
+  border-radius: 10px;
+  z-index: 20;
+}
+.bolt::before {
+  content: '';
+  position: absolute;
+  height: 7px;
+  width: 7px;
+  left: 3px;
+  bottom: 0px;
+  background: #40484a;
+  border-radius: 10px;
+  border-radius: 100%;
+  z-index: 20;
+}
+
+.bolt.b {
+  transform: rotate(45deg);
+}
+.bolt.c {
+  transform: rotate(90deg);
+}
+.bolt.d {
+  transform: rotate(135deg);
+}
+
+.wheel-back {
+  position: absolute;
+  height: 130px;
+  width: 130px;
+  top: 56%;
+  left: 66%;
+  border-radius: 100%;
+  z-index: 5;
+  transform: scale(1.2);
+  animation: spin-back 6s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin-back {
+  from {
+    transform: rotate(0deg) scale(1.2);
+  }
+
+  to {
+    transform: rotate(-360deg) scale(1.2);
+  }
+}
+
+@keyframes slide-aside {
+  from {
+    left: 120%;
+  }
+
+  to {
+    left: -50%;
+  }
+}
