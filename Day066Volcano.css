@@ -1,0 +1,171 @@
+body {
+  background: #b52e00;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.volcano {
+  position: absolute;
+  background: black;
+  height: 50%;
+  width: 100%;
+  bottom: 0%;
+  background: radial-gradient(circle at top, rgba(0,0,0,1) 0%, rgba(49,6,0,1) 100%);
+  z-index: 2;
+}
+.volcano::after {
+  content: '';
+  position: absolute;
+  background: black;
+  height: 15%;
+  top: -7.5%;
+  width: 15%;
+  left: 42.5%;
+  border-radius: 100%;
+}
+.sky-left {
+  position: absolute;
+  background: #7a1f02;
+  background: radial-gradient(ellipse, rgba(122,31,2,1) 30%, rgba(181,46,0,1) 72%);
+  height: 125%;
+  width: 85%;
+  left: -40%;
+  top: -25%;
+  border-radius: 100%;
+  z-index: 3;
+  clip-path: polygon(89% 0, 100% 62%, 100% 100%, 0 100%, 0 0);
+
+}
+.sky-right {
+  position: absolute;
+  background: #7a1f02;
+  background: radial-gradient(ellipse, rgba(122,31,2,1) 30%, rgba(181,46,0,1) 72%);
+  height: 125%;
+  width: 85%;
+  left: 55%;
+  top: -25%;
+  border-radius: 100%;
+  z-index: 3;
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 62%);
+
+}
+.beam {
+  background: white;
+  position: absolute;
+  height: 50%;
+  bottom: 52%;
+  width: 15px;
+  border-radius: 10px;
+  z-index: 1;
+  left: 49.5%;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(247,240,2,1) 22%, rgba(255,102,0,1) 56%, rgba(255,37,0,1) 82%, rgba(181,46,0,1) 100%);
+
+  transform-origin: bottom;
+  animation: erupt .7s ease-in infinite;
+}
+.beam:nth-child(2) {
+  left: 50.5%;
+  transform: rotate(1deg);
+  animation-delay: -.1s;
+}
+.beam:nth-child(3) {
+  left: 51%;
+  transform: rotate(2deg);
+  animation-delay: -.2s;
+}
+.beam:nth-child(4) {
+  left: 52%;
+  transform: rotate(3deg);
+  animation-delay: -.5s;
+}
+.beam:nth-child(5) {
+  transform: rotate(4deg);
+  animation-delay: -.3s;
+  left: 53.5%;
+}
+.beam:nth-child(6) {
+  transform: rotate(5deg);
+  animation-delay: -.1s;
+  left: 54.2%;
+}
+.beam:nth-child(7) {
+  transform: rotate(-1deg);
+  left: 48%;
+  animation-delay: -.3s;
+}
+.beam:nth-child(8) {
+  transform: rotate(-2deg);
+  left: 47.5%;
+}
+.beam:nth-child(9) {
+  transform: rotate(-3deg);
+  left: 46%;
+  animation-delay: -.5s;
+}
+.beam:nth-child(10) {
+  transform: rotate(-4deg);
+  animation-delay: -.2s;
+  left: 45%;
+}
+.beam:nth-child(11) {
+  transform: rotate(-5deg);
+  animation-delay: -.6s;
+  left: 44.5%;
+}
+.beam:nth-child(12) {
+  left: 50.25%;
+  transform: rotate(1.5deg);
+  animation-delay: .1s;
+}
+.beam:nth-child(13) {
+  left: 51.25%;
+  transform: rotate(2.5deg);
+  animation-delay: .2s;
+}
+.beam:nth-child(14) {
+  left: 52.25%;
+  transform: rotate(3.5deg);
+  animation-delay: .5s;
+}
+.beam:nth-child(15) {
+  transform: rotate(4.5deg);
+  animation-delay: .3s;
+  left: 53.25%;
+}
+.beam:nth-child(16) {
+  transform: rotate(5.5deg);
+  animation-delay: .1s;
+  left: 51.25%;
+}
+.beam:nth-child(17) {
+  transform: rotate(-1.5deg);
+  left: 48.25;
+  animation-delay: .3s;
+}
+.beam:nth-child(18) {
+  transform: rotate(-2.5deg);
+  left: 47.75%;
+}
+.beam:nth-child(19) {
+  transform: rotate(-3.5deg);
+  left: 46.25;
+  animation-delay: .5s;
+}
+.beam:nth-child(20) {
+  transform: rotate(-4.5deg);
+  animation-delay: .2s;
+  left: 45.25%;
+}
+
+@keyframes erupt {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 200%;
+    opacity: 0%;
+  }
+}
