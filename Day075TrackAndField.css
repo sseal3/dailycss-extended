@@ -1,0 +1,127 @@
+body {
+  background: #53b745;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 600px;
+  height: 300px;
+}
+.outer {
+  height: 300px;
+  width: 600px;
+  position: absolute;
+  background: #a87a3b;
+  border: 2px solid white;
+  border-radius: 200px;
+}
+.lane {
+  height: 261px;
+  width: 560px;
+  left: 18px;
+  top: 18px;
+  position: absolute;
+  background: #a87a3b;
+  border: 2px solid white;
+  border-radius: 200px;
+}
+.lane.two {
+  height: 222px;
+  width: 523px;
+  left: 36px;
+  top: 36px;
+}
+.lane.three {
+  height: 183px;
+  width: 483px;
+  left: 56px;
+  top: 56px;
+}
+.lane.last {
+  height: 144px;
+  width: 444px;
+  left: 75px;
+  top: 75px;
+  background: #4da940;
+}
+
+.runner {
+  height: 50%;
+  width: 2%;
+  position: absolute;
+  left: 49%;
+  bottom: 50%;
+  transform-origin: bottom;
+}
+.runner.a {
+  animation-delay: -1s;
+  animation: runit 10s linear infinite;
+}
+.runner.b {
+  animation-delay: -1s;
+  animation: runit 9s linear infinite;
+}
+.runner.c {
+  animation-delay: -1s;
+  animation: runit 8s linear infinite;
+}
+.runner.d {
+  animation-delay: -1s;
+  animation: runit 7s linear infinite;
+}
+.runner::after {
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 100%;
+  top: 2px;
+  background: black;
+  border: 1px solid black;
+  border-radius: 100%;
+}
+.runner.b::after {
+  background: blue;
+  top: 21px;
+}
+.runner.c::after {
+  background: green;
+  top: 41px;
+}
+.runner.d::after {
+  background: purple;
+  top: 60px;
+}
+
+@keyframes runit {
+  0% {
+    transform: rotate(0deg);
+    left: 74%;
+  }
+  
+  27% {
+    transform: rotate(180deg);
+    left: 74%;
+  }
+  
+  50% {
+    transform: rotate(180deg);
+    left: 24%;
+  }
+  77% {
+    transform: rotate(360deg);
+    left: 24%;
+  }
+  
+  100% {
+    transform: rotate(360deg);
+    left: 74%;
+  }
+
+}
