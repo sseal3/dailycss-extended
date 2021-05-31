@@ -1,0 +1,111 @@
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: black;
+  overflow: hidden;
+}
+.top-pane {
+  position: absolute;
+  height: 33%;
+  width: 100%;
+}
+.mid-pane {
+  position: absolute;
+  height: 33%;
+  top: 33%;
+  width: 100%;
+}
+.low-pane {
+  position: absolute;
+  height: 33%;
+  top: 66%;
+  width: 100%;
+}
+
+.star {
+  background: #c00000;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star::after {
+  content: '';
+  position: absolute;
+  background: white;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star::before {
+  content: '';
+  position: absolute;
+  background: blue;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  z-index: 1;
+}
+
+.star.top {
+  animation: slide-left 7s infinite linear;
+}
+.star.mid {
+  animation: slide-right 7s infinite linear;
+}
+.star.low {
+  animation: slide-left 7s infinite linear;
+}
+.star:nth-child(7n)
+{
+  animation-delay: -1s;
+}
+.star:nth-child(7n+2)
+{
+  animation-delay: -2s;
+}
+.star:nth-child(7n+3)
+{
+  animation-delay: -3s;
+}
+.star:nth-child(7n+4)
+{
+  animation-delay: -4s;
+}
+.star:nth-child(7n+5)
+{
+  animation-delay: -5s;
+}
+.star:nth-child(7n+6)
+{
+  animation-delay: -6s;
+}
+
+@keyframes slide-left {
+  from {
+    left: 120%;
+    transform: rotate(0deg);
+  }
+
+  to {
+    left: -50%;
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide-right {
+  from {
+    left: -50%;
+    transform: rotate(0deg);
+  }
+
+  to {
+    left: 120%;
+    transform: rotate(-360deg);
+  }
+}
