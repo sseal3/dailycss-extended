@@ -1,0 +1,138 @@
+body {
+  background: #61948b;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+
+.tree {
+  position: absolute;
+  background: #4b7641;
+  border: 1px solid #4b7641;
+  height: 90%;
+  width: 60%;
+  left: -10%;
+  z-index: 1;
+  clip-path: polygon(84% 24%, 73% 24%, 100% 0, 100% 100%, 43% 100%, 66% 71%, 54% 71%, 76% 44%, 64% 44%);
+}
+
+.tree.dk {
+  background: #336739;
+  border: 1px solid #336739;
+  transform: scaleX(-1);
+  left: 50%;
+}
+.trunk {
+  position: absolute;
+  height: 11%;
+  width: 10%;
+  bottom: 0%;
+  background: #68250b;
+  left: 45%;
+}
+.star {
+  position: absolute;
+  height: 14%;
+  width: 14%;
+  top: -7%;
+  background: #e9d561;
+  left: 43%;
+  z-index: 2;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.star.b {
+  transform: rotate(32deg);
+  background: #f9f355;
+}
+.ball {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background: red;
+  border-radius: 100%;
+  left: 40%;
+  top: 18%;
+  z-index: 3;
+  box-shadow: 0 0 40px 10px red;
+  animation: twinkle 3s linear alternate infinite;
+}
+
+.ball.blue {
+  background: cyan;
+  box-shadow: 0 0 40px 10px cyan;
+  top: 30%;
+}
+.ball.yellow {
+  background: yellow;
+  box-shadow: 0 0 40px 10px yellow;
+  animation-delay: -1s;
+  top: 35%;
+  left: 60%;
+}
+.ball.red {
+  background: red;
+  left: 50%;
+  box-shadow: 0 0 40px 10px red;
+}
+
+.ball:nth-child(6) {
+  top: 50%;
+  left: 55%;
+  animation-delay: -1s;
+}
+.ball:nth-child(7) {
+  top: 55%;
+  left: 35%;
+  animation-delay: -2s;
+}
+.ball:nth-child(8) {
+  top: 40%;
+  left: 45%;
+}
+.ball:nth-child(9) {
+  top: 70%;
+  left: 40%;
+}
+.ball:nth-child(10) {
+  top: 62%;
+  left: 58%;
+  animation-delay: -2s;
+}
+.ball:nth-child(11) {
+  top: 78%;
+  left: 50%;
+  animation-delay: -1s;
+}
+.ball:nth-child(12) {
+  top: 82%;
+  left: 65%;
+}
+.ball:nth-child(13) {
+  top: 80%;
+  left: 30%;
+  animation-delay: -2s;
+}
+.ball:nth-child(14) {
+  top: 72%;
+  left: 68%;
+  animation-delay: -1s;
+}
+
+@keyframes twinkle {
+
+  to {
+    opacity: 0;
+    height: 5px;
+    width: 5px;
+  }
+}
