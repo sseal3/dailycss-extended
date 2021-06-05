@@ -1,0 +1,241 @@
+body {
+  background: #000026;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 400px;
+  display: flex;
+  height: 400px;
+}
+
+.lamp-box {
+  position: relative;
+  height: 100%;
+  width: 33.333%;
+}
+.lamp {
+  position: absolute;
+  height: 90%;
+  width: 80%;
+  left: 10%;
+  top: 5%;
+}
+.lamp.center {
+  height: 100%;
+  width: 90%;
+  left: 5%;
+  top: 0%;
+}
+
+.cap {
+  position: absolute;
+  background: #c1c4c9;
+  height: 18.5%;
+  width: 45.2%;
+  left: 27.2%;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+.cap::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  left: 34%;
+  background: #dfe4ea;
+  clip-path: polygon(20% 0%, 74% 0, 100% 100%, 0% 100%);
+}
+
+.glass {
+  position: absolute;
+  background: pink;
+  height: 42.5%;
+  width: 90%;
+  top: 18%;
+  left: 5%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+.glass.purple {
+  background: #693d88;
+}
+
+.glass.blue {
+  background: #119cd3;
+}
+.glass.pink {
+  background: #d4609d;
+}
+
+
+.base-top {
+  position: absolute;
+  background: #c1c4c9;
+  height: 20.5%;
+  width: 90%;
+  top: 60%;
+  left: 5%;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+}
+
+.base-top::before {
+  content: '';
+  position: absolute;
+  height: 110%;
+  width: 15%;
+  top: -10%;
+  left: 68%;
+  background: #dfe4ea;
+  transform: rotate(10deg);
+  clip-path: polygon(20% 100%, 74% 100%, 100% 0, 0 0);
+
+}
+.base-top::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 48%;
+  background: #dfe4ea;
+}
+
+.base-joint {
+  position: absolute;
+  background: #9c9fa4;
+  height: 1%;
+  width: 92%;
+  top: 80%;
+  left: 4%;
+  clip-path: polygon(21% 0%, 79% 0%, 80% 100%, 20% 100%);
+
+}
+.base-bottom {
+  position: absolute;
+  background: #c1c4c9;
+  height: 20%;
+  width: 90%;
+  top: 80%;
+  left: 5%;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.base-bottom::before {
+  content: '';
+  position: absolute;
+  height: 110%;
+  width: 14%;
+  top: -10%;
+  left: 68%;
+  background: #dfe4ea;
+  transform: rotate(-10deg);
+  clip-path: polygon(20% 0%, 74% 0, 100% 100%, 0% 100%);
+
+}
+.base-bottom::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 7%;
+  left: 52%;
+  background: #dfe4ea;
+}
+
+.lava {
+  position: absolute;
+  height: 20%;
+  width: 30%;
+  left: 45%;
+  top: 30%;
+  background: pink;
+  border-radius: 45%;
+}
+.lava.pink {
+  background: #ab418b;
+  animation: slideup-left 5s linear infinite;
+}
+.lava.green {
+  background: #0b8c49;
+  animation: slideup-mid 5s linear infinite;
+}
+.lava.orange {
+  background: #e92f44;
+  animation: slideup-right 5s linear infinite;
+}
+
+.lava::after {
+  content: '';
+  position: absolute;
+  height: 75%;
+  width: 75%;
+  left: 11%;
+  top: 8%;
+  transform: rotate(15deg);
+  background: pink;
+  border-radius: 45%;
+}
+.lava.pink::after {
+  background: #d3619c;
+}
+.lava.green::after {
+  background: #56ac6d;
+}
+.lava.orange::after {
+  background: #ffa216;
+}
+.lava:nth-child(5n) {
+  animation-delay: -2.6s;
+  left: 40%;
+}
+.lava:nth-child(5n+1) {
+  animation-delay: -3.5s;
+  left: 30%;
+}
+.lava:nth-child(5n+2) {
+  animation-delay: -2s;
+  transform: scale(1.4);
+  left: 30%;
+}
+.lava:nth-child(5n+3) {
+  animation-delay: -1.5s;
+  transform: scale(0.8);
+  left: 50%;
+}
+.lava:nth-child(5n+4) {
+  animation-delay: 0s;
+  transform: scale(1.7);
+  left: 35%;
+}
+
+@keyframes slideup-left {
+  from {
+    top: 150%;
+  }
+
+  to {
+    top: -50%;
+  }
+}
+@keyframes slideup-mid {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: -50%;
+  }
+}
+@keyframes slideup-right {
+  from {
+    top: 150%;
+  }
+
+  to {
+    top: -20%;
+  }
+}
