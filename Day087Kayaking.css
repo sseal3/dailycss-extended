@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+.kayak-box {
+  position: relative;
+  height: 300px;
+  width: 300px;
+}
+.kayak-shrink {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  transform: scaleX(0.6);
+}
+.kayak {
+  background: #FF6A06;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  border-radius: 0 100%;
+  border: 2px solid white;
+  transform: rotate(45deg);
+}
+.kayak::before {
+  content: '';
+  background: black;
+  position: absolute;
+  height: 70px;
+  width: 170px;
+  top: 35%;
+  left: 20%;
+  border: 2px solid white;
+  transform: rotate(45deg);
+  border-radius: 100%;
+}
+
+.paddle {
+  background: black;
+  position: absolute;
+  height: 120%;
+  width: 10px;
+  left: 50%;
+  top: -10%;
+  border: 2px solid white;
+  transform: rotate(45deg);
+  animation: paddleit 2s ease-in-out alternate infinite;
+}
+.paddle::after {
+  content: '';
+  position: absolute;
+  background: black;
+  border: 2px solid white;
+  height: 70px;
+  width: 30px;
+  top: -60px;
+  left: -12px;
+  border-radius: 15px 15px 50% 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 66% 100%, 66% 90%, 36% 90%, 36% 100%, 0 100%);
+}
+.paddle::before {
+  content: '';
+  position: absolute;
+  background: black;
+  border: 2px solid white;
+  height: 70px;
+  width: 30px;
+  bottom: -60px;
+  left: -12px;
+  transform: rotateX(-180deg);
+  border-radius: 15px 15px 50% 50%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 66% 100%, 66% 90%, 36% 90%, 36% 100%, 0 100%);
+}
+
+
+@keyframes paddleit {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(135deg);
+  }
+}
