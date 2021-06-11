@@ -1,0 +1,139 @@
+body {
+  background: #9eeded;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  perspective: 300px;
+}
+
+.thread {
+  position: absolute;
+  background: #dd5151;
+  height: 2px;
+  width: 550%;
+  top: 200%;
+  left: 50%;
+  z-index: 3;
+  animation: threadit 2s infinite alternate linear;
+}
+
+.bobbin {
+  position: absolute;
+  background: #dd5151;
+  height: 20%;
+  width: 40%;
+  top: 60%;
+  left: 30%;
+  z-index: 3;
+}
+
+.bobbin::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  width: 100%;
+  height: 49%;
+  border-radius: 100%;
+  top: 75%;
+}
+
+.bobbin-top {
+  position: absolute;
+  background: silver;
+  height: 200px;
+  width: 200px;
+  top: -170%;
+  left: -32%;
+  z-index: 3;
+  border-radius: 100%;
+  border-bottom: 14px solid grey;
+  transform-style: preserve-3d;
+  transform: rotate3d(-10,0,0,-90deg);
+}
+
+.bobbin-bottom {
+  position: absolute;
+  background: silver;
+  height: 200px;
+  width: 200px;
+  top: 48%;
+  left: 17%;
+  border-radius: 100%;
+  border-bottom: 14px solid grey;
+  transform-style: preserve-3d;
+  transform: rotate3d(-10,0,0,-100deg);
+}
+.hole-plate {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  animation: spinit 3s infinite linear;
+}
+.hole {
+  position: absolute;
+  height: 30px;
+  width: 50%;
+  top: 85px;
+  transform-origin: right;
+}
+.hole::after {
+  content: '';
+  background: #9eeded;
+  position: absolute;
+  height: 20px;
+  left: 10px;
+  width: 20px;
+  border-radius: 100%;
+  border: 4px solid grey;
+}
+.hole:nth-child(2) {
+  transform: rotate(45deg);
+}
+.hole:nth-child(3) {
+  transform: rotate(90deg);
+}
+.hole:nth-child(4) {
+  transform: rotate(135deg);
+}
+.hole:nth-child(5) {
+  transform: rotate(180deg);
+}
+.hole:nth-child(6) {
+  transform: rotate(225deg);
+}
+.hole:nth-child(7) {
+  transform: rotate(270deg);
+}
+.hole:nth-child(8) {
+  transform: rotate(315deg);
+}
+
+@keyframes spinit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes threadit {
+  from {
+    top: 65%;
+  }
+
+  to {
+    top: 80%;
+  }
+}
