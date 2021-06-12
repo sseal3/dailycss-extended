@@ -1,0 +1,162 @@
+body {
+  background: #1f2035;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle, rgba(63,94,251,1) 16%, rgba(31,32,53,1) 83%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 15%;
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.fire-box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 200px;
+  height: 200px;
+  transform: scaleX(0.5);
+}
+
+.fire {
+  position: absolute;
+  background: #B62203;
+  height: 200px;
+  width: 200px;
+  border-radius: 100% 0% 100% 100%;
+  border-top: 12px solid #801100;
+  border-right: 12px solid #801100;
+  transform: rotate(-45deg);
+  z-index: 3;
+}
+.fire::before {
+  content: '';
+  background: #FC6400;
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  left: 30px;
+  top: 50px;
+  border-radius: 100% 0% 100% 100%;
+  z-index: 0;
+}
+.fire::after {
+  content: '';
+  background: #FAC000;
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  left: 40px;
+  top: 80px;
+  border-radius: 100% 0% 100% 100%;
+  z-index: 0;
+}
+.fire.sub {
+  transform: scale(0.7) rotate(-20deg);
+  left: 90px;
+  z-index: 1;
+}
+.fire.sec {
+  left: -80px;
+  transform: scale(0.6) rotate(-60deg);
+  top: 20px;
+}
+
+.log {
+  position: absolute;
+  height: 34px;
+  width: 180px;
+  background: #95541b;
+  border: 2px solid black;
+  border-radius: 14px;
+  left: 28%;
+  top: 44%;
+  transform: rotate(20deg);
+}
+
+.log::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border: 2px solid black;
+  height: 100%;
+  width: 15px;
+  right: -3px;
+  top: -2px;
+  border-radius: 100%;
+}
+.log.low {
+  transform: rotate(-200deg);
+}
+
+.stick {
+  position: absolute;
+  background: black;
+  height: 3px;
+  width: 120px;
+  top: 20%;
+  left: 0%;
+  border-radius: 100%;
+  transform: rotate(-45deg);
+}
+
+.marshmallow {
+  position: absolute;
+  height: 34px;
+  width: 44px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 14px;
+  top: -580%;
+  left: 50%;
+  animation: toastit 8s linear infinite;
+}
+
+.marshmallow::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border: 2px solid black;
+  height: 100%;
+  width: 15px;
+  right: -3px;
+  top: -2px;
+  border-radius: 100%;
+}
+.stick-top {
+  position: absolute;
+  background: black;
+  height: 100%;
+  width: 20px;
+  bottom: 0%;
+  right: 0%;
+  border-radius: 100%;
+}
+
+.stick.opp {
+  transform: rotate(-135deg);
+  left: 72%;
+}
+
+@keyframes toastit {
+  0%, 20% {
+    background: white;
+  }
+
+  60% {
+    background: #dabd84;
+  }
+  
+  90%, 100% {
+    background: black;
+  }
+}
