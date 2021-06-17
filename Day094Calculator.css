@@ -1,0 +1,140 @@
+body {
+  background: #fe9345;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 300px;
+  height: 400px;
+}
+
+.calc {
+  position: absolute;
+  background: lightblue;
+  border: 4px solid black;
+  height: 100%;
+  width: 100%;
+  border-radius: 30px;
+}
+
+.screen {
+  content: '000';
+  position: absolute;
+  height: 20%;
+  width: 80%;
+  left: calc(10% - 4px);
+  top: 7%;
+  background: silver;
+  border: 4px solid black;
+  border-radius: 15px;
+  border-radius: 8px;
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  animation: typeit 5s linear forwards;
+}
+
+.screen::after {
+  content: '000';
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: calc(10% - 4px);
+  top: 7%;
+  background: silver;
+  font-size: 45px;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  animation: typeit 5s linear forwards;
+}
+
+.button-box {
+  position: absolute;
+  height: 55%;
+  width: 80%;
+  left: 10%;
+  background: silver;
+  border-radius: 5px;
+  top: 37%;
+  flex-wrap: wrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+.button {
+  position: relative;
+  margin: 2px;
+  margin-left: 6px;
+  margin-right: 5.5px;
+  height: 40px;
+  width: 40px;
+  background: white;
+  border: 4px solid black;
+  border-radius: 8px;
+  font-size: 35px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+.button.one {
+  animation: pushit-1 5s linear;
+}
+.button.two {
+  animation: pushit-2 5s linear;
+}
+.button.three {
+  animation: pushit-3 5s linear;
+}
+.button.four {
+  animation: pushit-4 5s linear;
+}
+.button.five {
+  animation: pushit-5 5s linear;
+}
+
+
+@keyframes pushit-1 {
+    0%, 8% { background: white; color: black; }
+    10% { background: black; color: white; }
+    12%, 100% { background: white; color: black; }
+}
+@keyframes pushit-2 {
+    0%, 28% { background: white; color: black; }
+    30% { background: black; color: white; }
+    32%, 100% { background: white; color: black; }
+}
+@keyframes pushit-3 {
+    0%, 48% { background: white; color: black; }
+    50% { background: black; color: white; }
+    52%, 100% { background: white; color: black; }
+}
+@keyframes pushit-4 {
+    0%, 68% { background: white; color: black; }
+    70% { background: black; color: white; }
+    72%, 100% { background: white; color: black; }
+}
+@keyframes pushit-5 {
+    0%, 88% { background: white; color: black; }
+    90% { background: black; color: white; }
+    92%, 100% { background: white; color: black; }
+}
+@keyframes typeit {
+    0% { content: "" }
+    20% { content: "1" }
+    40% { content: "12" }
+    60% { content: "123" }
+    80% { content: "1234" }
+    100% { content: "12345" }
+}
