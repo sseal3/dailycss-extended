@@ -1,0 +1,74 @@
+body {
+  background: #03bb85;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 300px;
+  height: 300px;
+}
+
+
+.thermometer {
+  position: absolute;
+  background: #f6feff;
+  height: 80%;
+  width: 12%;
+  border-radius: 20px 20px 0% 0%;
+  top: 10%;
+  z-index: 3;
+  left: 45%;
+}
+
+.thermometer::after {
+  content: '';
+  position: absolute;
+  height: 30%;
+  width: 200%;
+  left: -50%;
+  background: inherit;
+  top: 90%;
+  border-radius: 100%;
+}
+
+.mercury {
+  position: absolute;
+  background: red;
+  height: 50%;
+  width: 80%;
+  right: 10%;
+  bottom: 2%;
+  z-index: 3;
+  animation: heatit 3s linear alternate 2;
+}
+.mercury::after {
+  content: '';
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  left: -18px;
+  background: inherit;
+  bottom: -49px;
+  border-radius: 100%;
+}
+
+.tick {
+  height: 2.5px;
+  width: 10px;
+  background: black;
+  position: relative;
+  margin-top: 21px;
+  z-index: 5;
+}
+
+@keyframes heatit {
+  to {
+    height: 90%;
+  }
+}
