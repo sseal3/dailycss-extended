@@ -1,0 +1,117 @@
+body {
+  background: #87ceeb;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  animation: spinit 3s infinite linear;
+}
+
+
+.pin {
+  position: absolute;
+  height: 50%;
+  width: 50%;
+}
+
+.big {
+  height: 100%;
+  width: 100%;
+}
+
+.big.one {
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  background: yellow;
+}
+
+.pin.two {
+  left: 50%;
+}
+.big.two {
+  background: blue;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+}
+.pin.three {
+  top: 50%;
+}
+.big.three {
+  background: red;
+  clip-path: polygon(0 100%, 0 0, 100% 0);
+}
+.pin.four {
+  top: 50%;
+  left: 50%;
+}
+.big.four {
+  background: green;
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+}
+
+.little {
+  position: absolute;
+  opacity: 0.6;
+}
+
+.little.one {
+  background: red;
+  height: 51%;
+  width: 102%;
+  top: 50%;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.little.two {
+  background: yellow;
+  height: 102%;
+  width: 51%;
+  top: -1%;
+  left: -1%;
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+}
+
+.little.three {
+  background: green;
+  height: 102%;
+  width: 51%;
+  top: -1%;
+  right: -1%;
+  clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+
+.little.four {
+  background: blue;
+  height: 51%;
+  width: 102%;
+  top: -1%;
+  left: -1%;
+  clip-path: polygon(100% 0, 50% 100%, 0 0);
+
+}
+
+.center-dot {
+  position: absolute;
+  background: black;
+  height: 6%;
+  width: 6%;
+  left: 47%;
+  top: 47%;
+  border-radius: 100%;
+}
+
+@keyframes spinit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
