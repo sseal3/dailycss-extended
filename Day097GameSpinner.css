@@ -1,0 +1,90 @@
+body {
+  background: #7ec850;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 300px;
+  height: 300px;
+  background: white;
+  border-radius: 100%;
+}
+.segment {
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  left: 5%;
+  top: 5%;
+  background:  #24408E;
+  border-radius: 100%;
+  clip-path: polygon(20% 0, 50% 51%, 80% 0);
+
+}
+.segment.green {
+  background:  #007940;
+  transform: rotate(60deg);
+}
+.segment.yellow {
+  background: #FDE01A;
+  transform: rotate(120deg);
+}
+.segment.orange {
+  background:  #F68A1E;
+  transform: rotate(180deg);
+}
+.segment.red {
+  background: #D12229;
+  transform: rotate(240deg);
+}
+.segment.purple {
+  background: #732982;
+  transform: rotate(300deg);
+}
+.center-dot {
+  position: absolute;
+  background: white;
+  height: 6%;
+  width: 6%;
+  left: 47%;
+  top: 47%;
+  border-radius: 100%;
+}
+
+.arrow {
+  position: absolute;
+  background: black;
+  height: 14%;
+  width: 40%;
+  top: 42.5%;
+  left: 34%;
+  transform-origin: 50px 50%;
+  border-radius: 5px 0 0 5px;
+  animation: spinit 2s linear infinite;
+}
+.arrow::after {
+  content: '';
+  height: 160%;
+  top: -30%;
+  width: 50%;
+  left: 100%;
+  background: inherit;
+  position: absolute;
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  border-radius: 5px;
+}
+
+
+@keyframes spinit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
