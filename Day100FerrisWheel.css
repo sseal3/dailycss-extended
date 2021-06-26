@@ -1,0 +1,226 @@
+body {
+  background: #c5f1f2;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.field {
+  position: absolute;
+  bottom: 25%;
+  width: 100%;
+  height: 42%;
+  background: #8fad7b;
+}
+.range {
+  position: absolute;
+  bottom: 65%;
+  width: 100%;
+  height: 15%;
+  background: #a3cfe9;
+  clip-path: polygon(47% 63%, 65% 16%, 79% 59%, 100% 0, 100% 100%, 0 100%, 0 18%, 11% 0, 21% 58%, 38% 12%);
+  z-index: 2;
+}
+.grass {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 50%;
+  background: #659f64;
+}
+.ferris {
+  position: relative;
+  margin: auto;
+  margin-top: 8%;
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+
+.wheel {
+  position: absolute;
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  bottom: 0%;
+  border: 8px solid #491c5e;
+  z-index: 3;
+}
+
+.wheel::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border: 4px solid #491c5e;
+  border-radius: 100%;
+  height: 50%;
+  width: 50%;
+  top: calc(25% - 4px);
+  left: calc(25% - 4px);
+}
+
+.spoke {
+  position: absolute;
+  background: #491c5e;
+  height: 100%;
+  width: 2px;
+  top: 0%;
+  left: 49%;
+  animation: spin-spoke 10s linear infinite;
+}
+
+.spoke:nth-child(2) {
+  transform: rotate(20deg);
+  animation: spin-spoke20 10s linear infinite;
+}
+.spoke:nth-child(3) {
+  transform: rotate(40deg);
+  animation: spin-spoke40 10s linear infinite;
+}
+.spoke:nth-child(4) {
+  transform: rotate(60deg);
+  animation: spin-spoke60 10s linear infinite;
+}
+.spoke:nth-child(5) {
+  transform: rotate(80deg);
+  animation: spin-spoke80 10s linear infinite;
+}
+.spoke:nth-child(6) {
+  transform: rotate(100deg);
+  animation: spin-spoke100 10s linear infinite;
+}
+.spoke:nth-child(7) {
+  transform: rotate(120deg);
+  animation: spin-spoke120 10s linear infinite;
+}
+.spoke:nth-child(8) {
+  transform: rotate(140deg);
+  animation: spin-spoke140 10s linear infinite;
+}
+.spoke:nth-child(9) {
+  transform: rotate(160deg);
+  animation: spin-spoke160 10s linear infinite;
+}
+
+.spoke::after {
+  content: '';
+  position: absolute;
+  background: #6ebace;
+  border-radius: 100%;
+  border: 5px solid #491c5e;
+  height: 30px;
+  width: 30px;
+  left: -20px;
+  top: -40px;
+  
+}
+.spoke::before {
+  content: '';
+  position: absolute;
+  background: #6ebace;
+  border-radius: 100%;
+  border: 5px solid #491c5e;
+  height: 30px;
+  width: 30px;
+  bottom: -40px;
+  right: -20px;
+}
+
+.platform {
+  position: absolute;
+  background: #ff5653;
+  border: 5px solid #491c5e;
+  height: 5%;
+  width: 100%;
+  border-radius: 10px;
+  bottom: -30%;
+  z-index: 6;
+}
+.platform::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 10px;
+  border: 5px solid #491c5e;
+  height: 100%;
+  width: 20%;
+  bottom: 1600%;
+  left: calc(40% - 5px);
+}
+
+.support {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: #ff5653;
+  border: 5px solid #491c5e;
+  border-radius: 40px;
+  z-index: 5;
+}
+.support.center {
+  left: calc(50% - 20px);
+  top: 30%;
+}
+.support.left {
+  height: 85%;
+  width: 20px;
+  bottom: -30%;
+  left: 30%;
+  transform: rotate(15deg);
+}
+.support.right {
+  height: 85%;
+  width: 20px;
+  bottom: -30%;
+  right: 27%;
+  transform: rotate(-15deg);
+}
+
+
+@keyframes spin-spoke {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes spin-spoke20 {
+  to {
+    transform: rotate(-340deg);
+  }
+}
+@keyframes spin-spoke40 {
+  to {
+    transform: rotate(-320deg);
+  }
+}
+@keyframes spin-spoke60 {
+  to {
+    transform: rotate(-300deg);
+  }
+}
+@keyframes spin-spoke80 {
+  to {
+    transform: rotate(-280deg);
+  }
+}
+@keyframes spin-spoke100 {
+  to {
+    transform: rotate(-260deg);
+  }
+}
+@keyframes spin-spoke120 {
+  to {
+    transform: rotate(-240deg);
+  }
+}
+@keyframes spin-spoke140 {
+  to {
+    transform: rotate(-220deg);
+  }
+}
+@keyframes spin-spoke160 {
+  to {
+    transform: rotate(-200deg);
+  }
+}
